@@ -18,3 +18,6 @@ class Product(Timestamps, models.Model):
     min_price = models.DecimalField(default=0, max_digits=8, decimal_places=2)
     max_price = models.DecimalField(default=0, max_digits=8, decimal_places=2)
     expiry_date = models.DateTimeField(default=default_expirydate)
+
+    def __str__(self):
+        return self.name
