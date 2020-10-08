@@ -6,7 +6,9 @@ from apps.utils.models import Timestamps
 
 
 class Bid(Timestamps, models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.DO_NOTHING)
-    product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(
+        get_user_model(), related_name="bids", on_delete=models.DO_NOTHING)
+    product = models.ForeignKey(
+        Product, related_name="bids", on_delete=models.DO_NOTHING)
     amount = models.DecimalField(default=0, max_digits=8, decimal_places=2)
     is_accepted = models.BooleanField(default=False)

@@ -59,6 +59,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
+        related_name="profile",
         primary_key=True,
     )
     first_name = models.CharField(max_length=100)

@@ -10,7 +10,8 @@ def default_expirydate():
 
 
 class Product(Timestamps, models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(
+        get_user_model(), related_name="products", on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=150)
     description = models.TextField(default='', blank=True)
     image = models.ImageField(

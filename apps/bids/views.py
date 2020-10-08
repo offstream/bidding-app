@@ -1,12 +1,7 @@
-from rest_framework import serializers, viewsets
+from rest_framework import viewsets
 
 from .models import Bid
-
-
-class BidSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Bid
-        fields = '__all__'
+from .serializers import BidSerializer
 
 
 class BidViewSet(viewsets.ModelViewSet):
