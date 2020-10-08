@@ -27,3 +27,11 @@ class UserSerializer(serializers.ModelSerializer):
         user.is_admin = is_admin
         user.save()
         return user
+
+
+class UserSimpleSerializer(serializers.ModelSerializer):
+    profile = serializers.StringRelatedField(read_only=True)
+
+    class Meta:
+        model = get_user_model()
+        fields = ('id', 'email', 'is_admin', 'profile')
