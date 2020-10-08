@@ -1,6 +1,16 @@
 import React from "react";
+import Header from "./layout/Header";
+import ProductsList from "./products/ProductsList";
 
 const App = () => {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Header />
+      <div className="container-fluid mt-4">
+        <ProductsList />
+      </div>
+    </>
+  );
 };
+
 export default App;
